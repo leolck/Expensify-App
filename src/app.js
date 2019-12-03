@@ -4,7 +4,7 @@ import AppRouter from './routers/AppRouter';
 import { Provider } from 'react-redux';
 
 import configureStore from './store/configureStore';
-import { add_expense } from './actions/expenses';
+import { start_set_expenses } from './actions/expenses';
 import { set_text_filter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 
@@ -21,4 +21,10 @@ const jsx = (
         <AppRouter />
     </Provider>
 );
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(start_set_expenses()).then(() => {
+    ReactDOM.render(jsx, document.getElementById('app'));
+});
+
+
