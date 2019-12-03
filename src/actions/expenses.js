@@ -7,6 +7,7 @@ export const add_expense = (expense) => ({
     expense: expense
 });
 
+// asynchronous action for add
 export const start_add_expense = (
     {
         description = '', note = '', amount = 0, createdAt = 0
@@ -28,6 +29,15 @@ export const remove_expense = ({ id } = {}) => ({
     type: 'REMOVE_EXPENSE',
     id: id
 });
+
+// asynchronous action for remove
+export const start_remove_expense = ({ id } = {}) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).remove().then(() => {
+            dispatch(remove_expense({ id }))
+        });
+    };
+};
 // EDIT_EXPENSE
 export const edit_expense = (id, updates) => ({
     type: 'EDIT_EXPENSE',
