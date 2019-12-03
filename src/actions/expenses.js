@@ -45,6 +45,15 @@ export const edit_expense = (id, updates) => ({
     updates: updates
 });
 
+// asynchronous action for edit
+export const start_edit_expense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`).update(updates).then(() => {
+            dispatch(edit_expense(id, updates));
+        });
+    };
+};
+
 // SET_EXPENSES
 export const set_expenses = (expenses) => ({
     type: 'SET_EXPENSES',

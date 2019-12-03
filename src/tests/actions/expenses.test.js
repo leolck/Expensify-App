@@ -2,6 +2,7 @@ import
 { start_add_expense, 
     add_expense, 
     edit_expense, 
+    start_edit_expense,
     remove_expense, 
     start_remove_expense, 
     set_expenses, 
@@ -54,6 +55,36 @@ test('should setup edit expense action object', () => {
         updates: { 
             note: 'New note value' 
         }
+    });
+});
+
+test('should edit expense from firebase', (done) => {
+    const store = createMockStore({});
+    const expenseData = {
+        description: expenses[0].description,
+        note: expenses[0].amount,
+        amount: expenses[0].amount,
+        createdAt: expenses[0].createdAt
+    };
+    const expenseId = expenses[0].id;
+    const updates = {
+        description: 'candy',
+        note: 'trident'
+    };
+    store.dispatch(start_edit_expense(expenseId, updates)).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'EDIT_EXPENSE',
+            id: expenseId,
+            updates: updates
+        });
+        return database.ref(`expenses/${expenseId}`).once('value');
+    }).then((snapshot) => {
+        expect(snapshot.val()).toEqual({
+            ...expenseData,
+            ...updates
+        });
+        done();
     });
 });
 
