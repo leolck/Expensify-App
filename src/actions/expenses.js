@@ -13,9 +13,10 @@ export const start_add_expense = (
         description = '', note = '', amount = 0, createdAt = 0
     } = {}
 ) => {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
         const expense = { description, note, amount, createdAt }
-        return database.ref('expenses').push(expense).then((ref) => {
+        return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
             dispatch(add_expense({
                 id: ref.key,
                 ...expense
@@ -32,8 +33,9 @@ export const remove_expense = ({ id } = {}) => ({
 
 // asynchronous action for remove
 export const start_remove_expense = ({ id } = {}) => {
-    return (dispatch) => {
-        return database.ref(`expenses/${id}`).remove().then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => {
             dispatch(remove_expense({ id }))
         });
     };
@@ -47,8 +49,9 @@ export const edit_expense = (id, updates) => ({
 
 // asynchronous action for edit
 export const start_edit_expense = (id, updates) => {
-    return (dispatch) => {
-        return database.ref(`expenses/${id}`).update(updates).then(() => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses/${id}`).update(updates).then(() => {
             dispatch(edit_expense(id, updates));
         });
     };
@@ -61,8 +64,9 @@ export const set_expenses = (expenses) => ({
 });
 
 export const start_set_expenses = () => {
-    return (dispatch) => {
-        return database.ref('expenses').once('value').then((snapshot) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {
             const expenses = [];
             snapshot.forEach((childSnapshot) => {
                 expenses.push({
