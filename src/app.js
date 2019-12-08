@@ -7,6 +7,7 @@ import { start_set_expenses } from './actions/expenses';
 import { login, logout} from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -15,13 +16,13 @@ import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
 
 const store = configureStore();
-
 const jsx = (
     <Provider store={store}>
         <AppRouter />
     </Provider>
 );
 
+// Render the app if it hasn't been already
 let hasRendered = false;
 const renderApp = () => {
     if (!hasRendered) {
@@ -30,7 +31,8 @@ const renderApp = () => {
     };
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+// Render the loading page
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
     if (user) {
