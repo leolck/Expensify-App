@@ -11,6 +11,11 @@
     text-decoration: none;
 }
 
+.button-login {
+    @extend .button;
+    margin-bottom: $s-size;
+}
+
 // buttons that look like links
 .button--link {
     background: none;
@@ -18,7 +23,22 @@
     color: white;
 }
 
+// remove button colour
 .button--secondary {
     background: #888888;
 }
 
+// facebook login button colour
+.button--facebook {
+    background: $facebook;
+}
+
+// google login button colour
+.button--google {
+    background: $google;
+}
+
+// twitter login button colour
+.button--twitter {
+    background: $twitter;
+}

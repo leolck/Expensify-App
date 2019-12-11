@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { start_set_expenses } from './actions/expenses';
 import { login, logout} from './actions/auth';
-import getVisibleExpenses from './selectors/expenses';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 

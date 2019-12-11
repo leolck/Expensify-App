@@ -13,11 +13,13 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 
 const database = firebase.database();
 
-export { firebase, googleAuthProvider, database as default };
+export { firebase, facebookAuthProvider, googleAuthProvider, twitterAuthProvider, database as default };
 // // child_removed
 // database.ref('expenses').on('child_remove', (snapshot) => {
 //     console.log(snapshot.key, snapshot.val());
