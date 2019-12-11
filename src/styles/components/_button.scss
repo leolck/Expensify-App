@@ -11,10 +11,17 @@
     text-decoration: none;
 }
 
+.button-layout {
+    display: flex;
+    flex-direction: column;
+}
+
 .button-login {
     @extend .button;
     margin-bottom: $s-size;
 }
+
+
 
 // buttons that look like links
 .button--link {

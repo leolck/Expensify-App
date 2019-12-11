@@ -7,24 +7,26 @@ export const LoginPage = ({ startLoginFacebook, startLoginGoogle, startLoginTwit
         <div className="box-layout__box">
             <h1 className="box-layout__title">Expensify</h1>
             <p>It's time to get your expenses under control.</p>
-            <button
-                className="button-login button--facebook"
-                onClick={startLoginFacebook}
-            >
-                Login with Facebook
-            </button>
-            <button 
-                className="button-login button--google" 
-                onClick={startLoginGoogle}
-            >
-                Login with Google
-            </button>
-            <button
-                className="button button--twitter"
-                onClick={startLoginTwitter}
-            >
-                Login with Twitter
-            </button>
+            <div className="button-layout">
+                <button
+                    className="button-login button--facebook"
+                    onClick={startLoginFacebook}
+                >
+                    Login with Facebook
+                </button>
+                <button 
+                    className="button-login button--google" 
+                    onClick={startLoginGoogle}
+                >
+                    Login with Google
+                </button>
+                <button
+                    className="button button--twitter"
+                    onClick={startLoginTwitter}
+                >
+                    Login with Twitter
+                </button>
+            </div>
         </div>
     </div>
 );
