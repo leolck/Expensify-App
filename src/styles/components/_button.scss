@@ -11,6 +11,10 @@
     text-decoration: none;
 }
 
+.button:disabled {
+    opacity: .5;
+}
+
 .button-layout {
     display: flex;
     flex-direction: column;

@@ -5,6 +5,8 @@
 }
 
 .page-header__actions {
+    display: flex;
+    justify-content: space-between;
     margin-top: $m-size;
 }
 
