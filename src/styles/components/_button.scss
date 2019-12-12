@@ -25,8 +25,6 @@
     margin-bottom: $s-size;
 }
 
-
-
 // buttons that look like links
 .button--link {
     background: none;
@@ -37,6 +35,17 @@
 // remove button colour
 .button--secondary {
     background: #888888;
+}
+
+// button deny remove
+.button--deny {
+    background: red;
+    font-weight: 700;
+}
+
+.button--confirm {
+    background: green;
+    font-weight: 700;
 }
 
 // facebook login button colour
