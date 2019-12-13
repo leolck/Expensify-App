@@ -10,12 +10,12 @@ export const add_expense = (expense) => ({
 // asynchronous action for add
 export const start_add_expense = (
     {
-        description = '', note = '', amount = 0, createdAt = 0
+        description = '', note = '', amount = 0, dueDate = 0
     } = {}
 ) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        const expense = { description, note, amount, createdAt }
+        const expense = { description, note, amount, dueDate }
         return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
             dispatch(add_expense({
                 id: ref.key,

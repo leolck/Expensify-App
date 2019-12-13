@@ -31,7 +31,7 @@ test('should add expense', () => {
         description: 'xbox',
         note: 'controller',
         amount: 7000,
-        createdAt: 5000
+        dueDate: 5000
     };
     const action = {
         type: 'ADD_EXPENSE',

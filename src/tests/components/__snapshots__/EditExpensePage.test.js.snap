@@ -22,8 +22,8 @@ exports[`should render EditExpensePage 1`] = `
       expense={
         Object {
           "amount": 195,
-          "createdAt": 0,
           "description": "gum",
+          "dueDate": 0,
           "id": "1",
           "note": "",
         }

@@ -19,8 +19,8 @@ const createMockStore = configureMockStore([thunk]);
 
 beforeEach((done) => {
     const expensesData = {};
-    expenses.forEach(({ id, description, note, amount, createdAt }) => {
-        expensesData[id] = { description, note, amount, createdAt };
+    expenses.forEach(({ id, description, note, amount, dueDate }) => {
+        expensesData[id] = { description, note, amount, dueDate };
     });
     database.ref(`users/${uid}/expenses`).set(expensesData).then(() => done());
 });
@@ -66,7 +66,7 @@ test('should edit expense from firebase', (done) => {
         description: expenses[0].description,
         note: expenses[0].amount,
         amount: expenses[0].amount,
-        createdAt: expenses[0].createdAt
+        dueDate: expenses[0].dueDate
     };
     const expenseId = expenses[0].id;
     const updates = {
@@ -104,7 +104,7 @@ test('should add expense to database and store', (done) => {
         description: 'Mouse',
         note: 'This one is better',
         amount: 3000,
-        createdAt: 1000
+        dueDate: 1000
     };
     store.dispatch(start_add_expense(expenseData)).then(() => {
         const actions = store.getActions();
@@ -127,7 +127,7 @@ test('should add expense with defaults to database and store', (done) => {
         description: '',
         note: '',
         amount: 0,
-        createdAt: 0
+        dueDate: 0
     };
     store.dispatch(start_add_expense(expenseData)).then(() => {
         const actions = store.getActions();

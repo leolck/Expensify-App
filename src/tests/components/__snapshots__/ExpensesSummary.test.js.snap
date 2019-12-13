@@ -21,6 +21,16 @@ exports[`should list out 1 expense 1`] = `
         $2.35
       </span>
     </h1>
+    <h2
+      className="page-header__subtitle"
+    >
+      <i>
+        <span />
+         
+        expenses
+         hidden because of your filters.
+      </i>
+    </h2>
     <div
       className="page-header__actions"
     >
@@ -30,6 +40,12 @@ exports[`should list out 1 expense 1`] = `
       >
         Add Expense
       </Link>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Clear Filters
+      </button>
     </div>
   </div>
 </div>
@@ -56,6 +72,16 @@ exports[`should list out 2 expenses 1`] = `
         $2,353.24
       </span>
     </h1>
+    <h2
+      className="page-header__subtitle"
+    >
+      <i>
+        <span />
+         
+        expenses
+         hidden because of your filters.
+      </i>
+    </h2>
     <div
       className="page-header__actions"
     >
@@ -65,6 +91,12 @@ exports[`should list out 2 expenses 1`] = `
       >
         Add Expense
       </Link>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Clear Filters
+      </button>
     </div>
   </div>
 </div>
