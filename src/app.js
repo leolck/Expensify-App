@@ -8,11 +8,22 @@ import { login, logout} from './actions/auth';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
 
+// Styles
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
+// Database
 import './firebase/firebase';
+
+// Fonts (Font Awesome)
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';   // brands for facebook, google, twitter
+library.add(fab);   // load brands into the library
+
+
+
+
 
 const store = configureStore();
 const jsx = (

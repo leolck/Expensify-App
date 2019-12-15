@@ -24,15 +24,23 @@
     }
 }
 .list-item:hover {
-    background: $off-white;
+    background: lighten($dark-blue, 60%);
 }
 
+
 .list-body {
+    a:nth-of-type(even) {
+        background: lighten($dark-blue, 70%);
+    }
+    a:nth-of-type(even):hover {
+        background: lighten($dark-blue, 60%);
+    }
     margin-bottom: $m-size;
     @media (min-width: $desktop-breakpoint) {
         margin-bottom: $l-size;
     }
 }
+
 
 .list-item--message {
     align-items: center;

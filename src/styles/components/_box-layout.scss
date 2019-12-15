@@ -20,3 +20,14 @@
     margin: 0 0 $m-size 0;
     line-height: 1;
 }
+
+.box-layout__body {
+    display: flex;
+    flex-direction: column;
+}
+
+// .box-layout__body-login {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+// }

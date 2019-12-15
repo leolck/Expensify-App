@@ -1,6 +1,6 @@
 // links that look like buttons
 .button {
-    background: $dark-blue;
+    background: lighten($dark-blue, 20%);
     border: none;
     border-radius: 4px; // rounded button corners
     color: white;
@@ -15,11 +15,10 @@
 .button:disabled {
     opacity: .5;
 }
-
-.button-layout {
-    display: flex;
-    flex-direction: column;
+.button:hover {
+    background: lighten($dark-blue, 10%);
 }
+
 
 .button-login {
     @extend .button;
@@ -53,13 +52,22 @@
 .button--facebook {
     background: $facebook;
 }
+.button--facebook:hover {
+    background: darken($facebook, 10%);
+}
 
 // google login button colour
 .button--google {
     background: $google;
 }
+.button--google:hover {
+    background: darken($google, 10%);
+}
 
 // twitter login button colour
 .button--twitter {
     background: $twitter;
+}
+.button--twitter:hover {
+    background: darken($twitter, 10%);
 }
