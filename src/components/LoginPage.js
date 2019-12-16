@@ -1,41 +1,49 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { startLoginFacebook, startLoginGoogle, startLoginTwitter } from '../actions/auth';
+import { startLoginFacebook, startLoginGithub, startLoginGoogle, startLoginTwitter } from '../actions/auth';
 
 // Fonts (Font Awesome)
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export const LoginPage = ({ startLoginFacebook, startLoginGoogle, startLoginTwitter }) => (
+export const LoginPage = ({ startLoginFacebook, startLoginGithub, startLoginGoogle, startLoginTwitter }) => (
     <div className="box-layout">
         <div className="box-layout__box">
             <h1 className="box-layout__title">Expensify</h1>
             <p>It's time to get your expenses under control.</p>
             <div className="box-layout__body">
                 <div className="box-layout__body-login">
-                    <FontAwesomeIcon icon={["fab", "facebook-f"]}></FontAwesomeIcon>
-                    <button
+                    <button     
                         className="button-login button--facebook"
                         onClick={startLoginFacebook}
-                    >
+                    >   
+                        <FontAwesomeIcon icon={["fab", "facebook-f"]}></FontAwesomeIcon>
                         Login with Facebook
                     </button>
                 </div>
-                
                 <div className="box-layout__body-login">
-                    <FontAwesomeIcon icon={["fab", "google"]}></FontAwesomeIcon>
+                    <button
+                        className="button-login button--github"
+                        onClick={startLoginGithub}
+                    >
+                        <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
+                        Login with Github
+                    </button>
+                </div>
+                <div className="box-layout__body-login">
                     <button 
                         className="button-login button--google" 
                         onClick={startLoginGoogle}
                     >
+                        <FontAwesomeIcon icon={["fab", "google"]}></FontAwesomeIcon>
                         Login with Google
                     </button>
                 </div>
                 <div className="box-layout__body-login">
-                    <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
                     <button
-                        className="button button--twitter"
+                        className="button-login button--twitter"
                         onClick={startLoginTwitter}
                     >
+                        <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
                         Login with Twitter
                     </button>
                 </div>
@@ -46,6 +54,7 @@ export const LoginPage = ({ startLoginFacebook, startLoginGoogle, startLoginTwit
 
 const mapDispatchToProps = (dispatch)  => ({
     startLoginFacebook: () => dispatch(startLoginFacebook()),
+    startLoginGithub: () => dispatch(startLoginGithub()),
     startLoginGoogle: () => dispatch(startLoginGoogle()),
     startLoginTwitter: () => dispatch(startLoginTwitter())
 });

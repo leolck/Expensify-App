@@ -1,7 +1,7 @@
 .box-layout {
     align-items: center;
     background: url('/images/bg.jpg');
-    background: cover;
+    background-size: cover;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -9,11 +9,12 @@
 }
 
 .box-layout__box {
-    background: fade-out(white, .15);
+    background: fade-out(white, .30);
     border-radius: 3px;
     padding: $l-size $m-size;
     text-align: center;
-    width: 25rem;
+    width: 45rem;
+    height: 30rem;
 }
 
 .box-layout__title {
@@ -23,11 +24,18 @@
 
 .box-layout__body {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-// .box-layout__body-login {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-// }
+.box-layout__body-login {
+    width: 20rem;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+}
+
+button > span {
+    padding: $s-size;
+}

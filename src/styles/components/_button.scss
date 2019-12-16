@@ -22,7 +22,9 @@
 
 .button-login {
     @extend .button;
+    $font-size: $font-size-small;
     margin-bottom: $s-size;
+    width: 17rem;
 }
 
 // buttons that look like links
@@ -52,6 +54,15 @@
 .button--facebook {
     background: $facebook;
 }
+
+// github login button colour
+.button--github {
+    background: #24292e;
+}
+.button--github:hover {
+    background: darken($github, 10%);
+}
+
 .button--facebook:hover {
     background: darken($facebook, 10%);
 }
@@ -70,4 +81,8 @@
 }
 .button--twitter:hover {
     background: darken($twitter, 10%);
+}
+
+.button-logo {
+    // display: inline-block;
 }

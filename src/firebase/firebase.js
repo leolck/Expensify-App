@@ -14,12 +14,16 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 
 const database = firebase.database();
 
-export { firebase, facebookAuthProvider, googleAuthProvider, twitterAuthProvider, database as default };
+export 
+{ 
+    firebase, facebookAuthProvider, githubAuthProvider, googleAuthProvider, twitterAuthProvider, database as default 
+};
 // // child_removed
 // database.ref('expenses').on('child_remove', (snapshot) => {
 //     console.log(snapshot.key, snapshot.val());
