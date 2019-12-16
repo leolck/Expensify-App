@@ -15,12 +15,146 @@ exports[`should render LoginPage 1`] = `
     <p>
       It's time to get your expenses under control.
     </p>
-    <button
-      className="button"
-      onClick={[Function]}
+    <div
+      className="box-layout__body"
     >
-      Login with Google
-    </button>
+      <div
+        className="box-layout__body-login"
+      >
+        <button
+          className="button-login button--facebook"
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "facebook-f",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Login with Facebook
+        </button>
+      </div>
+      <div
+        className="box-layout__body-login"
+      >
+        <button
+          className="button-login button--github"
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "github",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Login with Github
+        </button>
+      </div>
+      <div
+        className="box-layout__body-login"
+      >
+        <button
+          className="button-login button--google"
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "google",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Login with Google
+        </button>
+      </div>
+      <div
+        className="box-layout__body-login"
+      >
+        <button
+          className="button-login button--twitter"
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Array [
+                "fab",
+                "twitter",
+              ]
+            }
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            swapOpacity={false}
+            symbol={false}
+            title=""
+            transform={null}
+          />
+          Login with Twitter
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 `;

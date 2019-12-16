@@ -15,8 +15,8 @@ export const LoginPage = ({ startLoginFacebook, startLoginGithub, startLoginGoog
                     <button     
                         className="button-login button--facebook"
                         onClick={startLoginFacebook}
-                    >   
-                        <FontAwesomeIcon icon={["fab", "facebook-f"]}></FontAwesomeIcon>
+                    >
+                        <FontAwesomeIcon icon={["fab", "facebook-f"]} pull="left"></FontAwesomeIcon>
                         Login with Facebook
                     </button>
                 </div>
@@ -25,7 +25,7 @@ export const LoginPage = ({ startLoginFacebook, startLoginGithub, startLoginGoog
                         className="button-login button--github"
                         onClick={startLoginGithub}
                     >
-                        <FontAwesomeIcon icon={["fab", "github"]}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={["fab", "github"]} pull="left"></FontAwesomeIcon>
                         Login with Github
                     </button>
                 </div>
@@ -34,7 +34,7 @@ export const LoginPage = ({ startLoginFacebook, startLoginGithub, startLoginGoog
                         className="button-login button--google" 
                         onClick={startLoginGoogle}
                     >
-                        <FontAwesomeIcon icon={["fab", "google"]}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={["fab", "google"]} pull="left"></FontAwesomeIcon>
                         Login with Google
                     </button>
                 </div>
@@ -43,7 +43,7 @@ export const LoginPage = ({ startLoginFacebook, startLoginGithub, startLoginGoog
                         className="button-login button--twitter"
                         onClick={startLoginTwitter}
                     >
-                        <FontAwesomeIcon icon={["fab", "twitter"]}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={["fab", "twitter"]} pull="left"></FontAwesomeIcon>
                         Login with Twitter
                     </button>
                 </div>
