@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { set_text_filter, sort_by_date, sort_by_amount, set_start_date, set_end_date } from '../actions/filters';
+import { 
+    set_text_filter, sort_by_date, sort_by_amount, order_by_high, order_by_low, set_start_date, set_end_date
+} from '../actions/filters';
 import { DateRangePicker } from 'react-dates';
 
 export class ExpenseListFilters extends React.Component {
@@ -24,6 +26,13 @@ export class ExpenseListFilters extends React.Component {
             this.props.sort_by_amount();
         }
     };
+    onOrderChange = () => {
+        if (this.props.filters.orderBy === 'high') {
+            this.props.order_by_low();
+        } else {
+            this.props.order_by_high();
+        };
+    };
     render() {
         return (
             <div className="content-container">
@@ -46,7 +55,20 @@ export class ExpenseListFilters extends React.Component {
                             <option value='date'>Date</option>
                             <option value='amount'>Amount</option>
                         </select>
+                        <button
+                            className="sort"
+                            onClick={this.onOrderChange}
+                        >
+                            {
+                                this.props.filters.orderBy === 'high'
+                                ?
+                                <span>High</span>
+                                :
+                                <span>Low</span>
+                            }
+                        </button>
                     </div>
+                    
                     <div className="input-group__item">
                         <DateRangePicker
                             startDate={this.props.filters.startDate}
@@ -73,6 +95,8 @@ const mapDispatchToProps = (dispatch) => ({
     set_text_filter: (text) => dispatch(set_text_filter(text)),
     sort_by_date: () => dispatch(sort_by_date()),
     sort_by_amount: () => dispatch(sort_by_amount()),
+    order_by_high: () => dispatch(order_by_high()),
+    order_by_low: () => dispatch(order_by_low()),
     set_start_date: (startDate) => dispatch(set_start_date(startDate)),
     set_end_date: (endDate) => dispatch(set_end_date(endDate))
 });
