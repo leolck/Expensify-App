@@ -3,12 +3,14 @@ import { shallow } from 'enzyme';
 import { ExpenseListFilters } from '../../components/ExpenseListFilters';
 import { filters, altFilters } from '../fixtures/filters';
 
-let set_text_filter, sort_by_date, sort_by_amount, set_start_date, set_end_date, wrapper;
+let set_text_filter, sort_by_date, sort_by_amount, order_by_high, order_by_low, set_start_date, set_end_date, wrapper;
 
 beforeEach(() => {
     set_text_filter = jest.fn();
     sort_by_date = jest.fn();
     sort_by_amount = jest.fn();
+    order_by_high = jest.fn();
+    order_by_low = jest.fn();
     set_start_date = jest.fn();
     set_end_date = jest.fn();
     wrapper = shallow(
@@ -17,6 +19,8 @@ beforeEach(() => {
             set_text_filter={set_text_filter}
             sort_by_date={sort_by_date}
             sort_by_amount={sort_by_amount}
+            order_by_high={order_by_high}
+            order_by_low={order_by_low}
             set_start_date={set_start_date}
             set_end_date={set_end_date}
         />
@@ -65,6 +69,19 @@ test('should sort by amount', () => {
         }
     });
     expect(sort_by_amount).toHaveBeenCalled();
+});
+
+test('should order from high to low', () => {
+    wrapper.find('button').simulate('click');
+    expect(order_by_low).toHaveBeenCalled();
+});
+
+test('should order from low to high', () => {
+    wrapper.setProps({
+        filters: altFilters
+    });
+    wrapper.find('button').simulate('click');
+    expect(order_by_high).toHaveBeenCalled();
 });
 
 test('should handle date changes', () => {

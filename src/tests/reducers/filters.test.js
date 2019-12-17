@@ -6,6 +6,7 @@ test('should setup default filter values', () => {
     expect(state).toEqual({
         text: '',
         sortBy: 'date',
+        orderBy: 'high',
         startDate: moment().startOf('month'),
         endDate: moment().endOf('month')
     });
@@ -20,6 +21,7 @@ test('should setup sortBy to date', () => {
     const currentState = {
         text: '',
         sortBy: 'amount',
+        orderBy: 'high',
         startDate: undefined,
         endDate: undefined
     };
@@ -55,4 +57,27 @@ test('should setup set end date', () => {
     };
     const state = filtersReducer(undefined, action);
     expect(state.endDate).toEqual(endDate);
+});
+
+test('should setup orderBy to low', () => {
+    const action = {
+        type: 'ORDER_BY_LOW'
+    };
+    const state = filtersReducer(undefined, action);
+    expect(state.orderBy).toBe('low');
+});
+
+test('should setup orderBy to high', () => {
+    const currentState = {
+        text: '',
+        sortBy: 'amount',
+        orderBy: 'low',
+        startDate: undefined,
+        endDate: undefined
+    };
+    const action = {
+        type: 'ORDER_BY_HIGH'
+    };
+    const state = filtersReducer(currentState, action);
+    expect(state.orderBy).toBe('high');
 });

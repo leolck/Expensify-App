@@ -3,6 +3,7 @@ import moment from 'moment';
 const filters = {
     text: '',
     sortBy: 'date',
+    orderBy: 'high',
     startDate: undefined,
     endDate: undefined
 };
@@ -10,6 +11,7 @@ const filters = {
 const altFilters = {
     text: 'bills',
     sortBy: 'amount',
+    orderBy: 'low',
     startDate: moment(0),
     endDate: moment(0).add(3, 'days')
 };
